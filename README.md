@@ -8,7 +8,7 @@
 运行环境：
          java 端：   java 1.8 + tomcat 8.0 + mysql 5.7.21 +springboot + springmvc + mybatis  + Echart  ; 开发工具：pycharm
         
-          python 端 ： python 3.7 + tornado 6.0.2 + requests 2.25.1 +jieba 0.42.1  ; 开发工具:eclipse
+   python 端 ： python 3.7 + tornado 6.0.2 + requests 2.25.1 +jieba 0.42.1  ; 开发工具:eclipse
 运行流程：
         python服务   启动python_web app.py 文件的main 方法
         java服务     启动tomcat 浏览器输入 ip:端口/项目名/page/chart_0.do
