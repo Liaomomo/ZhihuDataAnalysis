@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:p="http://www.springframework.org/schema/p" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+http://www.springframework.org/schema/context 
+http://www.springframework.org/schema/context/spring-context-4.0.xsd
+http://www.springframework.org/schema/mvc 
+http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+http://www.springframework.org/schema/context 
+http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+<context:component-scan base-package="com.qd.demo"/>
+    <!-- 扫描service包下所有使用注解的类型 -->
+    <context:component-scan base-package="com.tusdt.demo.service" />  
+	
+    <!-- 启用注解驱动 -->
+    <mvc:annotation-driven></mvc:annotation-driven>
+    <mvc:default-servlet-handler/> <!-- 进行筛查 -->
+    <mvc:resources mapping="/static/**" location="/static/" cache-period="31556926"/>
+
+</beans>
+
+
+
+

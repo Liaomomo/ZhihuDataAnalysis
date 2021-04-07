@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qd.demo.mapper.UserQuestionMapper">
+
+<!--最有影响力话题  -->
+<select id="getUserQuestion" resultType="java.util.HashMap" >
+   select hot_degree as value ,question_title as name from hot_quet_pro
+     
+</select>
+
+<select id="getUserInterest" resultType="java.util.HashMap" >
+    select topic as name,num as value from topic order by value desc LIMIT 1000
+</select>
+
+</mapper>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qd.demo.mapper.UserMapper">
+
+<select id="getUserList" resultType="java.util.HashMap" >
+
+</select>
+
+<select id="getAnswerQuestionNumUser" resultType="java.util.HashMap" >
+    select user_name as name,answers_num as value from answers_mostusers ORDER BY value
+</select>
+
+<select id="getUserJobLocation" resultType="java.util.HashMap" >
+    select business,count(*) totalNum from user_all where business != 'NULL' group by business order by totalNum desc limit 10
+</select>
+
+<select id="getUserJobLocation_1" resultType="java.util.HashMap" >
+    select business as name,count(*) value from user_all where business != 'NULL' group by name order by value desc limit 5
+</select>
+
+
+<select id="getUserJobLocation2_2" resultType="java.util.HashMap" >
+    select  count(*) as value, business as name  from user_all where business != 'NULL' group by business order by value desc limit 10
+</select>
+
+<select id="getUserlocationMap" resultType="java.util.HashMap" >
+select count(*) as value,locaton as name from user_all where locaton != 'NULL'  group by name  order by value desc	   
+</select>
+
+<select id="getDiePowderUser" resultType="java.util.HashMap" >
+
+</select>
+<select id="getUserInfo" resultType="java.util.HashMap" parameterType="String">
+      select * from user_all where username=#{username} limit 1
+</select>
+
+</mapper>

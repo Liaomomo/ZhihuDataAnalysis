@@ -1,0 +1,55 @@
+body{
+	background:#2d3035;
+}
+a{
+	font-size:1.1em;
+	color:rgba(0, 0, 0, 0.87);
+}
+#echarts{
+	background:#FFF;
+	width: 100%; 
+	height: 500px;
+	margin-top:4%;
+}
+.head_word{
+	width:100%;
+	height:50px;
+	color:#FFF;
+	background:url('../img/Title.png') no-repeat;
+	background-size:100% 100%;
+}
+.page-contents{
+	height:400px;
+	width:100%;
+	margin: 0 auto; 
+	/* background:url('../img/Content.jpg') no-repeat; */
+}
+.nav_top{
+	
+}
+.nav_top li{
+	list-style: none; 
+	display: inline-block;
+	margin-right: 60px;
+
+}
+.sidebar{
+	width:20%;
+	height:500px; 
+	background:url('../img/Left.png') no-repeat;
+	background-size:100%;
+}
+.page-header{
+	background:#FFF;
+}
+.list-unstyled li{
+	text-align:center;
+	height:50px;
+	color:#FFF;
+	float:left;
+	width:100%;
+}
+#fan_img{
+	padding-left:8%;
+	padding-top:2%;
+}

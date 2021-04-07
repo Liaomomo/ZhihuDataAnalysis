@@ -1,0 +1,76 @@
+-----------------------------------------------------------------------------------
+注意：
+
+大家各自修改自己的部分，不要同时修改同一个文件
+
+大家写好code后，先把github上的代码拉下来更新下在上传自己编写好的code
+
+每晚大家离开时先提交代码
+
+每次编写代码时先把项目拉下来在进行编写
+------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------
+上传命令
+（1）、git pull origin master
+（2）、git add .
+  (3)  、git commit -m “说明一下你上传了什么文件”
+（4）、git push origin master
+----------------------------------------------------------------------------------
+
+
+github命令：
+
+git init    初始化
+
+git status  查看仓库当前的状态
+
+git diff <file>  查看具体修改了什么内容
+
+git diff HEAD --<file> 命令可以查看工作区和版本库里面最新版本的区别
+
+git add <file> 添加到暂存
+
+git add -f <file>  假如文件被忽略这样可以强制添加
+
+git commit -m "balabalabala" 提交暂存区的文件到本地仓库
+
+git log --graph --pretty=oneline 查看日志
+
+git reset --hard HEAD^   (git reset --hard 版本编号)  版本回退 
+
+git reset HEAD <file> 添加到了暂存区时，想丢弃修改 
+
+git checkout --<file>  当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时
+
+git rm <file> 从版本库中删除该文件(然后commit)
+
+git remote   查看远程库信息
+
+git remote -v  更加详细的查看
+
+git remote add origin 地址  本地关联远程库
+
+git clone  地址   克隆远程库
+
+git branch  查看当前分支 
+
+git branch <name>   创建分支
+
+git checkout <name>   切换分支
+
+git checkout -b <name>  我们创建分支，然后切换到分支
+
+git merge <name>  合并分支到当前分支
+
+git merge --no-ff -m "xxxxx" <name>   合并分支时，加上--no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而fast forward合并就看不出来曾经做过合并
+
+git branch -d <name>   删除分支
+
+git branch -D <name>   强行删除
+
+git pull origin <name>   拉取
+
+git push origin <name>  推送
+----------------------------------------------------------------------------------------------------------
+

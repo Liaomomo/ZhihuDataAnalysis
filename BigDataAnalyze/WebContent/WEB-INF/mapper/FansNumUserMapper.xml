@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qd.demo.mapper.FansNumUserMapper">
+
+<select id="getMostFansNumUser" resultType="java.util.HashMap" >
+       select username as name,followers as value,url from user_all order by followers desc LIMIT 200
+</select>
+
+<select id="getMostFansNumUser_1" resultType="java.util.HashMap" >
+       select username as name,followers as value,url from user_all order by followers desc LIMIT 5
+</select>
+</mapper>

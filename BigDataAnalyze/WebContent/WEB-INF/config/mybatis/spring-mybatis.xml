@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+    <!-- 1.配置数据源 -->
+    <bean name="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+        <!-- 四要素：驱动、连接地址(备用：172.19.128.202)、账号、密码-->
+        <property name="driverClassName" value="org.gjt.mm.mysql.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/analyze?useUnicode=true&amp;characterEncoding=UTF-8" />
+        <property name="username" value="root" />
+        <property name="password" value="123456" />
+    </bean>
+<!-- 2.配置会话工厂 -->
+<!-- 默认情况下：mybatis是不支持spring的数据源的 -->    
+<!-- 答：需要一个整合包 mybatis-spirng.jar
+     SqlSessionFactoryBean:作用就是让Mybatis可以通过Spring的数据源创			建会话工厂-->
+<bean name="sqlSessionFactory"	class="org.mybatis.spring.SqlSessionFactoryBean">
+       <!-- 指定数据源 -->
+	<property name="dataSource" ref="dataSource"></property>
+	<!-- 加载映射文件的路径 -->
+	<property name="mapperLocations" value="/WEB-INF/mapper/*Mapper.xml"></property>
+</bean> 
+<!-- 3.配置扫描器，将映射接口的动态对象创建，并且注入到spring容器里面 -->   
+<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+	<property name="sqlSessionFactoryBeanName" 
+	value="sqlSessionFactory"></property>
+	<property name="basePackage" value="com.qd.demo.mapper"></property>
+	<!-- 指定扫描注解 -->
+	<property name="annotationClass" value="org.apache.ibatis.annotations.Mapper"></property>
+</bean> 
+<!-- 4.配置事务代理，编程式事务 -->
+<!-- 注意：Mybatis是的spring jdbc的事务代理 -->
+<!-- 创建事务代理对象 -->
+<bean name="tx" 
+ class="org.springframework.jdbc.datasource.DataSourceTransactionManager"> 
+	<!-- 指定数据源 -->
+	<property name="dataSource" ref="dataSource"></property>
+</bean>
+<!-- 启动事务代理 -->
+<tx:annotation-driven/>
+
+
+</beans>
+<!-- 配置springmvc框架 -->
+
+
+    
+
